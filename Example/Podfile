@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'TKEventBusModule_Example' do
+  pod 'TKEventBusModule', :path => '../'
+
+  target 'TKEventBusModule_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
