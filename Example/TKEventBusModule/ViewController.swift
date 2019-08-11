@@ -30,16 +30,19 @@ extension ViewController {
         TKEventBus.instance.publish(TKEvent.init(.login, data: "这是个单独测试事件"))
     }
     @IBAction func moreEventSendAction(_ sender: Any) {
+         start = CACurrentMediaTime()
         TKEventBus.instance.publish(TKEvent.init(.login, data: "事件1"))
         TKEventBus.instance.publish(TKEvent.init(.update, data: "事件2"))
     }
 
     @IBAction func FusionEventSendAction(_ sender: Any) {
+         start = CACurrentMediaTime()
         TKEventBus.instance.publish(TKEvent.init(.login, data: "事件1"))
         TKEventBus.instance.publish(TKEvent.init(.logout, data: "事件2"))
     }
 
     @IBAction func notificationEventSendAction(_ sender: Any) {
+         start = CACurrentMediaTime()
         TKEventBus.instance.publish(Notification.init(name: .notification, object: "系统测试通知", userInfo: nil))
     }
 
@@ -63,27 +66,27 @@ extension ViewController {
     private func subscribeOneEvent() {
         self.bus.subscribe(on: .login) { (event) in
             debugPrint("单独事件响应")
-            let end = CACurrentMediaTime()
-            debugPrint("测试时间：\(end - (self.start ?? 0))")
+            debugPrint("测试时间：\(CACurrentMediaTime() - (self.start ?? 0))")
         }
     }
     private func subscribeNotificationEvent() {
         self.bus.subscribe(on: .notification) { (event) in
             debugPrint("通知兼容响应")
+            debugPrint("测试时间：\(CACurrentMediaTime() - (self.start ?? 0))")
         }
     }
 
     private func subscribeMoreEvent() {
         self.bus.subscribe(on: .login).subscribe(on: .update) { (event) in
             debugPrint("响应互斥事件\(event)")
-            let end = CACurrentMediaTime()
-            debugPrint("测试时间：\(end - (self.start ?? 0))")
+            debugPrint("测试时间：\(CACurrentMediaTime() - (self.start ?? 0))")
         }
     }
 
     private func subscribeFusionEvents() {
         self.bus.subscribe([.login,.logout]) { (events) in
             debugPrint("监听融合事件\(String(describing: events?.count))")
+            debugPrint("测试时间：\(CACurrentMediaTime() - (self.start ?? 0))")
         }
     }
 }

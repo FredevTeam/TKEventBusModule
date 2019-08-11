@@ -215,10 +215,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = X7X9425JM9;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = X7X9425JM9;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -485,6 +487,7 @@
 			baseConfigurationReference = 63FAAB3E69288BC6A741D1F6 /* Pods-TKEventBusModule_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X7X9425JM9;
 				INFOPLIST_FILE = TKEventBusModule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -500,6 +503,7 @@
 			baseConfigurationReference = 979C5DF2F89D38378AE7EE93 /* Pods-TKEventBusModule_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X7X9425JM9;
 				INFOPLIST_FILE = TKEventBusModule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -514,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4DEFF133F1D21B79C49D4D56 /* Pods-TKEventBusModule_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = X7X9425JM9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -536,6 +541,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE815657C3FA3834EA1C45F3 /* Pods-TKEventBusModule_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = X7X9425JM9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
