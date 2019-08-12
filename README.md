@@ -20,6 +20,43 @@ it, simply add the following line to your Podfile:
 pod 'TKEventBusModule'
 ```
 
+## Example 
+### 1. Subscriber
+
+1. `Import`
+```
+import TKEventBusModule
+```   
+
+2. subscribe for NSObject subclass or add protocol `TKEventSubscriber` 
+
+```
+self.bus.subscribe(on: .login) { (event) in
+    debugPrint("单独事件响应")
+    debugPrint("测试时间：\(CACurrentMediaTime() - (self.start ?? 0))")
+}
+
+```
+
+### 2. Publish. 
+1. Create Event need name and data object.     
+
+```
+let event = TKEvent.init(.login, data: "事件1")
+
+TKEventBus.instance.publish(event) 
+
+```
+
+#### Notification support 
+```
+let notification = Notification.init(name: .notification, object: "系统测试通知", userInfo: nil)
+TKEventBus.instance.publish(notification)
+
+```
+
+
+
 ## Author
 
 zhuamaodeyu, playtomandjerry@gmail.com
