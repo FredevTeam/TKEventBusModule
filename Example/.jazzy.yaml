@@ -1,0 +1,78 @@
+#  名字需要是 .jazzy.yaml  
+# jazzy 直接运行   
+# sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer 
+# xcode-select -print-path
+clean:  
+
+module: TKEventBusModule 
+module-version: 0.1.2 
+root_url: https://github.com/zhuamaodeyu
+author: 抓猫的鱼
+author_url: https://github.com/zhuamaodeyu/knowledge
+github_url: https://github.com/zhuamaodeyu/TKEventBusModule.git
+ 
+
+title: TKComponentization/TKEventBusModule 
+readme: ../README.md  
+
+
+theme: apple  
+output: out/doc 
+
+
+copyright: '© 2018 [抓猫的鱼](https://github.com/zhuamaodeyu/knowledge) under
+[open source license](https://github.com/zhuamaodeyu/TKAuthorityModule/blob/master/LICENSE).'
+
+
+# xcodebuild arguments 
+# xcodebuild_arguments: ["-workspace","TKAuthorityModule.xcworkspace",
+#                         "-scheme","TKAuthorityModule","-sdk","iphonesimulator"]
+
+xcodebuild_arguments:
+  - -workspace
+  - TKEventBusModule.xcworkspace
+  - -scheme
+  - TKEventBusModule
+  - -sdk 
+  - iphonesimulator
+
+
+hide-documentation-coverage: true 
+documentation: xxxx/*.md  # 都可 
+skip_undocumented: true   
+
+
+# docset 
+# docset-icon: xxxx/xxx
+# docset-path: doc
+
+
+swift_version: 5.0.1    
+min_acl: public # public open, fileprivate, intxxx 
+
+# exclude:  
+  # - "xxxxx.swift"  
+  # - "xxxx.swift" 
+  
+  
+custom_categories:  
+  - name: NameSpace 
+    children:
+      - TKEventSubscriber 
+      - EventSubscriberProtocol 
+  - name: Protocol 
+    children:  
+      - TKEventProtocol 
+  - name: Event/EventBus and Publish
+    children:
+      - TKEventBus
+      - Notification 
+      - TKEvent 
+      - Name 
+  - name: Subscriber 
+    children:
+      - EventSubscriberMaker
+  - name: Complation Block  
+    children:
+      - Complation 
+      - MoreEventComplation 

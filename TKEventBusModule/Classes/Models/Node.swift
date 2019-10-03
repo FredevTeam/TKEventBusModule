@@ -11,6 +11,7 @@ import Foundation
 
 protocol ObserverNodeProtocol {
     var uuid: UUID { get set }
+    func contain(event name: TKEvent.Name, target: AnyObject) -> Bool
 }
 
 
@@ -34,6 +35,15 @@ extension TKEventNode : Equatable {
 
 
 class TKIndependentEventObserverNode:ObserverNodeProtocol {
+    func contain(event name: TKEvent.Name, target: AnyObject) -> Bool {
+        if let selfT = self.target {
+            if name.rawValue == eventName.rawValue && Unmanaged.passUnretained(target).toOpaque() == Unmanaged.passUnretained(selfT).toOpaque() {
+                return true
+            }
+        }
+        return false
+    }
+
     var uuid: UUID
 
 
@@ -50,6 +60,18 @@ class TKIndependentEventObserverNode:ObserverNodeProtocol {
 }
 
 class TKAssociateEventObserverNode: ObserverNodeProtocol {
+    func contain(event name: TKEvent.Name, target: AnyObject) -> Bool {
+        if let selfT = self.target {
+            let hasName = Array(events.keys).contains { (n) -> Bool in
+                n.rawValue == name.rawValue
+            }
+            if hasName && Unmanaged.passUnretained(target).toOpaque() == Unmanaged.passUnretained(selfT).toOpaque() {
+                return true
+            }
+        }
+        return false
+    }
+
     var uuid: UUID
     private(set) var uniqueIdentifier: String?
     var events:[TKEvent.Name:TKEventProtocol] = [:]
@@ -71,3 +93,23 @@ class TKAssociateEventObserverNode: ObserverNodeProtocol {
 }
 
 
+/// 排除对象
+class ExtendObserverNode {
+    var name: TKEvent.Name
+    weak var observer: AnyObject?
+    init(name: TKEvent.Name, observer: AnyObject?) {
+        self.name = name
+        self.observer = observer
+    }
+}
+extension ExtendObserverNode: Equatable {
+    static func == (lhs: ExtendObserverNode, rhs: ExtendObserverNode) -> Bool {
+        if let lhsO = lhs.observer, let rhsO = rhs.observer {
+            return lhs.name.rawValue == rhs.name.rawValue && Unmanaged.passUnretained(lhsO).toOpaque() == Unmanaged.passUnretained(rhsO).toOpaque()
+        }
+        return false
+
+    }
+
+
+}

@@ -1,135 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7gM-2Y-wzp">
-<device id="retina6_1" orientation="portrait">
-<adaptation id="fullscreen"/>
-</device>
-<dependencies>
-<deployment identifier="iOS"/>
-<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-<capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-</dependencies>
-<scenes>
-<!--View Controller-->
-<scene sceneID="ufC-wZ-h7g">
-<objects>
-<viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="TKEventBusModule_Example" customModuleProvider="target" sceneMemberID="viewController">
-<layoutGuides>
-<viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-<viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-</layoutGuides>
-<view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-<rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<subviews>
-<button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3D-r6-P8P">
-<rect key="frame" x="140" y="115" width="123" height="30"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<state key="normal" title="发送单独事件"/>
-<connections>
-<action selector="oneEventSendAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Yvj-vL-EA8"/>
-</connections>
-</button>
-<button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnE-5V-HPy">
-<rect key="frame" x="143" y="153" width="123" height="30"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<state key="normal" title="同时发送两个事件"/>
-<connections>
-<action selector="moreEventSendAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="I11-ei-XBs"/>
-</connections>
-</button>
-<button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1H-9w-ZN7">
-<rect key="frame" x="146" y="201" width="123" height="30"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<state key="normal" title="测试系统通知兼容"/>
-<connections>
-<action selector="notificationEventSendAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dqa-wj-WeV"/>
-</connections>
-</button>
-<button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-Jr-kt1">
-<rect key="frame" x="159" y="246" width="62" height="30"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<state key="normal" title="融合事件"/>
-<connections>
-<action selector="FusionEventSendAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PvR-Qu-pvV"/>
-</connections>
-</button>
-<button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8t-Ij-78F">
-<rect key="frame" x="151" y="284" width="62" height="30"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<state key="normal" title="事件取消"/>
-<connections>
-<action selector="cancelSubscribeTKEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V6U-pE-bF5"/>
-</connections>
-</button>
-<button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZA-Ot-kxd">
-<rect key="frame" x="170" y="340" width="62" height="30"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<state key="normal" title="随机事件"/>
-<connections>
-<action selector="randomSendEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5g8-fg-obw"/>
-</connections>
-</button>
-<button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6N-28-BxP">
-<rect key="frame" x="152" y="395" width="77" height="30"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<state key="normal" title="随机监听者"/>
-</button>
-</subviews>
-<color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-</view>
-<navigationItem key="navigationItem" id="j3J-m6-gap">
-<barButtonItem key="rightBarButtonItem" style="plain" id="zAP-Fv-bPz">
-<button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mAy-He-6qf">
-<rect key="frame" x="328" y="7" width="66" height="30"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<state key="normal" title="Push"/>
-<connections>
-<segue destination="Nql-Ca-seG" kind="show" id="aEs-1f-qBf"/>
-</connections>
-</button>
-</barButtonItem>
-</navigationItem>
-</viewController>
-<placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-</objects>
-<point key="canvasLocation" x="538" y="-37"/>
-</scene>
-<!--Second View Controller-->
-<scene sceneID="sJF-0m-3kZ">
-<objects>
-<viewController id="Nql-Ca-seG" customClass="SecondViewController" customModule="TKEventBusModule_Example" customModuleProvider="target" sceneMemberID="viewController">
-<layoutGuides>
-<viewControllerLayoutGuide type="top" id="sei-wu-yzz"/>
-<viewControllerLayoutGuide type="bottom" id="mnu-0g-cid"/>
-</layoutGuides>
-<view key="view" contentMode="scaleToFill" id="hrX-57-3AP">
-<rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-</view>
-</viewController>
-<placeholder placeholderIdentifier="IBFirstResponder" id="hnG-uP-YmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-</objects>
-<point key="canvasLocation" x="1634" y="58"/>
-</scene>
-<!--Navigation Controller-->
-<scene sceneID="75s-Q5-Lav">
-<objects>
-<navigationController automaticallyAdjustsScrollViewInsets="NO" id="7gM-2Y-wzp" sceneMemberID="viewController">
-<toolbarItems/>
-<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="45y-dd-LPP">
-<rect key="frame" x="0.0" y="44" width="414" height="44"/>
-<autoresizingMask key="autoresizingMask"/>
-</navigationBar>
-<nil name="viewControllers"/>
-<connections>
-<segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="GNP-73-HTX"/>
-</connections>
-</navigationController>
-<placeholder placeholderIdentifier="IBFirstResponder" id="eIa-le-cqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-</objects>
-<point key="canvasLocation" x="136.80000000000001" y="-664.31784107946032"/>
-</scene>
-</scenes>
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="TKEventBusModule_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3D-r6-P8P">
+                                <rect key="frame" x="140" y="115" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="发送单独事件"/>
+                                <connections>
+                                    <action selector="oneEventSendAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Yvj-vL-EA8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnE-5V-HPy">
+                                <rect key="frame" x="143" y="153" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="同时发送两个事件"/>
+                                <connections>
+                                    <action selector="moreEventSendAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="I11-ei-XBs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1H-9w-ZN7">
+                                <rect key="frame" x="146" y="201" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="测试系统通知兼容"/>
+                                <connections>
+                                    <action selector="notificationEventSendAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dqa-wj-WeV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-Jr-kt1">
+                                <rect key="frame" x="159" y="246" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="融合事件"/>
+                                <connections>
+                                    <action selector="FusionEventSendAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PvR-Qu-pvV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8t-Ij-78F">
+                                <rect key="frame" x="151" y="284" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="事件取消"/>
+                                <connections>
+                                    <action selector="cancelSubscribeTKEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V6U-pE-bF5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZA-Ot-kxd">
+                                <rect key="frame" x="170" y="340" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="随机事件"/>
+                                <connections>
+                                    <action selector="randomSendEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5g8-fg-obw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6N-28-BxP">
+                                <rect key="frame" x="152" y="395" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="随机监听者"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="j3J-m6-gap">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="zAP-Fv-bPz">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mAy-He-6qf">
+                                <rect key="frame" x="328" y="7" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Push"/>
+                                <connections>
+                                    <segue destination="Nql-Ca-seG" kind="show" id="aEs-1f-qBf"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="406" y="-526"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="sJF-0m-3kZ">
+            <objects>
+                <viewController id="Nql-Ca-seG" customClass="SecondViewController" customModule="TKEventBusModule_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sei-wu-yzz"/>
+                        <viewControllerLayoutGuide type="bottom" id="mnu-0g-cid"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hrX-57-3AP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYZ-Cr-UJU">
+                                <rect key="frame" x="190" y="221" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="发送事件"/>
+                                <connections>
+                                    <action selector="sendEventAction:" destination="Nql-Ca-seG" eventType="touchUpInside" id="ORJ-Mp-Vw3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hnG-uP-YmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1470" y="-346"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="75s-Q5-Lav">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7gM-2Y-wzp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="45y-dd-LPP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="GNP-73-HTX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eIa-le-cqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-332" y="-574"/>
+        </scene>
+    </scenes>
 </document>
-
