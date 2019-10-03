@@ -9,7 +9,7 @@
 import Foundation
 import TKEventBusModule 
 
-struct Present {
+struct Present: TKEventSubscriber {
 
 }
 

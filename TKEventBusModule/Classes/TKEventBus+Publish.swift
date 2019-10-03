@@ -9,9 +9,15 @@ import Foundation
 
 extension TKEventBus {
 
-    /// publish
+    /// publish 发布事件
     ///
-    /// - Parameter event: event
+    /// - Parameter event: event 对象
+    /// - Note:
+    ///     默认支持 TKEvent , Notification
+    /// - Example:
+    ///    `TKEventBus.instance.publish(TKEvent.init(.login, data: "事件1"))`
+    ///     `TKEventBus.instance.publish(Notification.init(name: .notification, object: "系统测试通知", userInfo: nil))`
+    ///
     public func publish(_ event: TKEventProtocol) {
         append(event: event)
         sendEvent(event: event)
@@ -27,14 +33,17 @@ extension TKEventBus {
         guard let newNode = eventProtocolToEventNode(event: event) else {
             return
         }
+        // 单独事件
         let node = eventList.find(by: newNode)
+        // 联合事件
         let assNode = eventList.find(by: TKEventNode.init(.Association, event: nil))
 
         queue.async {
             for item in node?.value.observerList.toArray() ?? [] {
-                // 调用回调
+                // 独立事件
                 if let observer = item.obser as? TKIndependentEventObserverNode {
-                    if observer.target != nil {
+                    let extends = ExtendObserverNode.init(name: observer.eventName, observer: observer.target)
+                    if observer.target != nil && !self.extendObservers.contains(extends) {
                         item.observer(event:event)
                     }else {
                         node?.value.observerList.removes(at: [item])
@@ -43,6 +52,8 @@ extension TKEventBus {
             }
         }
         queue.async {
+
+            /// 联合事件回调
             let assObservers = assNode?.value.observerList.toArray() ?? []
             let result = assObservers.filter({ (observer) -> Bool in
                 if let ob = observer.obser as? TKAssociateEventObserverNode {

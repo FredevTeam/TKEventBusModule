@@ -13,12 +13,21 @@ import TKEventBusModule
 class ViewController: UIViewController {
 
     private var start : TimeInterval?
+    private var present: Present = Present()
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribeOneEvent()
         subscribeNotificationEvent()
         subscribeMoreEvent()
         subscribeFusionEvents()
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.bus.pauseSubscribe(on: .login)
     }
 }
 
@@ -77,6 +86,7 @@ extension ViewController {
     }
 
     private func subscribeMoreEvent() {
+        // 当前会单独触发一个事件
         self.bus.subscribe(on: .login).subscribe(on: .update) { (event) in
             debugPrint("响应互斥事件\(event)")
             debugPrint("测试时间：\(CACurrentMediaTime() - (self.start ?? 0))")

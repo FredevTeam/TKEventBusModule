@@ -8,12 +8,15 @@
 import Foundation
 
 
+
+/// 订阅者协议(命名空间协议)
 public protocol TKEventSubscriber {
     associatedtype Subscriber
     var bus: Subscriber { get }
     static var bus:Subscriber.Type { get }
 }
 
+// MARK: - 命名空间协议
 public extension TKEventSubscriber {
     var bus: EventSubscriberMaker<Self> {
         return EventSubscriberMaker(value: self)
@@ -29,6 +32,7 @@ public protocol EventSubscriberProtocol {
     init(value : WrappedType)
 }
 
+/// 订阅者
 public class EventSubscriberMaker<T> : EventSubscriberProtocol {
     public let wrappedValue: T
 
@@ -38,4 +42,6 @@ public class EventSubscriberMaker<T> : EventSubscriberProtocol {
         self.wrappedValue = value
     }
 }
+
+// MARK: - TKEventSubscriber 任意 NSObject 对象都可作为订阅者
 extension NSObject : TKEventSubscriber {}

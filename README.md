@@ -24,35 +24,65 @@ pod 'TKEventBusModule'
 ### 1. Subscriber
 
 1. `Import`
-```
-import TKEventBusModule
-```   
+	```
+	import TKEventBusModule
+	```   
 
 2. subscribe for NSObject subclass or add protocol `TKEventSubscriber` 
 
-```
-self.bus.subscribe(on: .login) { (event) in
-    debugPrint("单独事件响应")
-    debugPrint("测试时间：\(CACurrentMediaTime() - (self.start ?? 0))")
-}
+	```
+	self.bus.subscribe(on: .login) { (event) in
+	    debugPrint("单独事件响应")
+	    debugPrint("测试时间：\(CACurrentMediaTime() - (self.start ?? 0))")
+	}
+	
+	```
+3. custom Subscriber   
 
-```
+	```
+	struct Present: TKEventSubscriber {
+
+	}
+	private var present = Present() 
+
+	present.bus.subscribe(on: .login) { (event) in
+	    debugPrint("单独事件响应")
+	    debugPrint("测试时间：\(CACurrentMediaTime() - (self.start ?? 0))")
+	}
+	```
+#### Pause/ restore
+
+1. Pause 
+	
+	```
+	self.bus.pauseSubscribe(on: .login)
+	
+	```
+2. Restore 
+	
+	```
+	self.bus.restoreSubscribe(on: .login)
+	
+	```
+
 
 ### 2. Publish. 
 1. Create Event need name and data object.     
 
-```
-let event = TKEvent.init(.login, data: "事件1")
+	```
+	let event = TKEvent.init(.login, data: "事件1", jsonString:"")
+	
+	TKEventBus.instance.publish(event) 
+	
+	```
+	__Note:__ if use from Componentization,need use `init(_ name: , data:, jsonString:)`
 
-TKEventBus.instance.publish(event) 
 
-```
-
-#### Notification support 
+##### Notification support 
 ```
 let notification = Notification.init(name: .notification, object: "系统测试通知", userInfo: nil)
 TKEventBus.instance.publish(notification)
-
+	
 ```
 
 
