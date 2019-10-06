@@ -70,6 +70,8 @@ extension EventSubscriberMaker {
     ///     ```
     @discardableResult
     public func subscribe(on name:Notification.Name, complation:Complation? = nil) -> Self {
+        
+        TKEventBus.instance.addNotificationObserver(name: name, object: self.wrappedValue as AnyObject)
         return subscribe(on: TKEvent.Name.init(name.rawValue), complation: complation)
     }
 
@@ -176,6 +178,7 @@ extension EventSubscriberMaker {
     /// - Returns: 订阅者
     @discardableResult
     public func unsubscribe(on name: Notification.Name) -> Self {
+        TKEventBus.instance.removeNotificationObserver(name: name)
         unsubscribe(on: TKEvent.Name.init(name.rawValue), target: self.wrappedValue as AnyObject)
         return self
     }

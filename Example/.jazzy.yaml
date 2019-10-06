@@ -5,7 +5,7 @@
 clean:  
 
 module: TKEventBusModule 
-module-version: 0.1.2 
+module_version: 0.1.2 
 root_url: https://github.com/zhuamaodeyu
 author: 抓猫的鱼
 author_url: https://github.com/zhuamaodeyu/knowledge
@@ -21,7 +21,7 @@ output: out/doc
 
 
 copyright: '© 2018 [抓猫的鱼](https://github.com/zhuamaodeyu/knowledge) under
-[open source license](https://github.com/zhuamaodeyu/TKAuthorityModule/blob/master/LICENSE).'
+[open source license](https://github.com/zhuamaodeyu/TKEventBusModule/blob/master/LICENSE).'
 
 
 # xcodebuild arguments 
@@ -37,7 +37,7 @@ xcodebuild_arguments:
   - iphonesimulator
 
 
-hide-documentation-coverage: true 
+hide_documentation_coverage: true 
 documentation: xxxx/*.md  # 都可 
 skip_undocumented: true   
 

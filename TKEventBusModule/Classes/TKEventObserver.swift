@@ -57,12 +57,14 @@ extension TKEventObserver {
 
 
 extension TKEventObserver {
-    func observer(event: TKEventProtocol) {
+        // 系统通知，不发送通知
+    func observer(event: TKEventProtocol, systemNotification: Bool = false) {
         if let node = obser as? TKIndependentEventObserverNode {
             node.complation?(event)
-            if let notification = event as? Notification {
-                NotificationCenter.default.post(notification)
-            }
+            guard systemNotification == false else { return }
+//            if let systemNotification = event as? Notification {
+//                NotificationCenter.default.post(systemNotification)
+//            }
         }
     }
 }
