@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 /// 事件总线
 ///  用来统一管理，调度事件 
 public class TKEventBus {
@@ -21,5 +20,21 @@ public class TKEventBus {
     private init() {
         eventList.append(TKEventNode.init(.Association, event: nil))
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
+
+// MARK: - 系统通知处理
+extension TKEventBus {
+    func addNotificationObserver(name: Notification.Name, object: AnyObject) {
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationAction(notification:)), name: name, object: nil)
+    }
+    @objc func notificationAction(notification: Notification) {
+        TKEventBus.instance.sendEvent(event: notification, systemNotification: true)
+    }
+    func removeNotificationObserver(name: Notification.Name) {
+        NotificationCenter.default.removeObserver(self , name: name, object: nil)
+    }
+}

@@ -28,7 +28,7 @@ extension TKEventBus {
 
 // MARK: - private
 extension TKEventBus {
-    private func sendEvent(event: TKEventProtocol) {
+    func sendEvent(event: TKEventProtocol, systemNotification: Bool = false) {
 
         guard let newNode = eventProtocolToEventNode(event: event) else {
             return
@@ -44,7 +44,7 @@ extension TKEventBus {
                 if let observer = item.obser as? TKIndependentEventObserverNode {
                     let extends = ExtendObserverNode.init(name: observer.eventName, observer: observer.target)
                     if observer.target != nil && !self.extendObservers.contains(extends) {
-                        item.observer(event:event)
+                        item.observer(event:event, systemNotification: systemNotification)
                     }else {
                         node?.value.observerList.removes(at: [item])
                     }
@@ -75,6 +75,14 @@ extension TKEventBus {
                 }
             })
         }
+
+    }
+
+}
+
+// MARK: - 接收系统通知后
+extension TKEventBus {
+    func publish(notification: Notification) {
 
     }
 }
