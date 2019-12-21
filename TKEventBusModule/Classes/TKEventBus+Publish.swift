@@ -118,7 +118,7 @@ extension TKEventBus {
             node = TKEventNode.init(TKEvent.Name.init(notification.name.rawValue), event: notification)
         }
         if let e = event as? TKEvent {
-            node = TKEventNode.init(TKEvent.Name.init(e.name.rawValue), event: e)
+            node = TKEventNode.init(TKEvent.Name.init(e.ename.rawValue), event: e)
         }
         return node
     }

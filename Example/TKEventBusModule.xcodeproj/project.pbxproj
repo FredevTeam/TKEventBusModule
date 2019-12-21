@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1020521F2345AF9E008315D1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1020521E2345AF9E008315D1 /* SecondViewController.swift */; };
+		103A476F23AE5FC50018FE56 /* README-ZH.md in Resources */ = {isa = PBXBuildFile; fileRef = 103A476E23AE5FC50018FE56 /* README-ZH.md */; };
 		105A976322FFF6CC002B3072 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A976222FFF6CC002B3072 /* Extensions.swift */; };
 		2F0154ED6A466963E89DCF5C /* Pods_TKEventBusModule_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB217204337BCFCCBB751F3 /* Pods_TKEventBusModule_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		1020521E2345AF9E008315D1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		103A476E23AE5FC50018FE56 /* README-ZH.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-ZH.md"; sourceTree = "<group>"; };
 		105A976222FFF6CC002B3072 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1901711E6901210FC67E2EFD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4006201D3D48F2770C3C6C91 /* TKEventBusModule.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TKEventBusModule.podspec; path = ../TKEventBusModule.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -150,6 +152,7 @@
 				4006201D3D48F2770C3C6C91 /* TKEventBusModule.podspec */,
 				1901711E6901210FC67E2EFD /* README.md */,
 				E0353332C61326F1582E64B2 /* LICENSE */,
+				103A476E23AE5FC50018FE56 /* README-ZH.md */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				103A476F23AE5FC50018FE56 /* README-ZH.md in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
