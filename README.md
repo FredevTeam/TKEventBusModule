@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/TKEventBusModule.svg?style=flat)](https://cocoapods.org/pods/TKEventBusModule)
 [![Platform](https://img.shields.io/cocoapods/p/TKEventBusModule.svg?style=flat)](https://cocoapods.org/pods/TKEventBusModule)
 
-[中文文档](./README-ZH.md)
+[中文文档](./Example/README-ZH.md)
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
