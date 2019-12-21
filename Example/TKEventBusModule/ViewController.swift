@@ -52,7 +52,9 @@ extension ViewController {
 
     @IBAction func notificationEventSendAction(_ sender: Any) {
          start = CACurrentMediaTime()
-        TKEventBus.instance.publish(Notification.init(name: .notification, object: "系统测试通知", userInfo: nil))
+        let notification = Notification.init(name: Notification.Name.notification, object: "系统测试", userInfo: nil)
+//        TKEventBus.instance.publish(Notification.init(name: .notification, object: "系统测试通知", userInfo: nil))
+        TKEventBus.instance.publish(notification)
     }
 
 

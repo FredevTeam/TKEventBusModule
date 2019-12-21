@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/TKEventBusModule.svg?style=flat)](https://cocoapods.org/pods/TKEventBusModule)
 [![Platform](https://img.shields.io/cocoapods/p/TKEventBusModule.svg?style=flat)](https://cocoapods.org/pods/TKEventBusModule)
 
+[中文文档](./README-ZH.md)
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -84,6 +85,8 @@ let notification = Notification.init(name: .notification, object: "系统测试�
 TKEventBus.instance.publish(notification)
 	
 ```
+__Note:__ protocol property jsonString is not use from this is Notification ,  data property is default return object or userInfo
+
 
 
 
