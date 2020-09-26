@@ -1,0 +1,16 @@
+PODS:
+  - TKEventBusModule (0.1.5)
+
+DEPENDENCIES:
+  - TKEventBusModule (from `../`)
+
+EXTERNAL SOURCES:
+  TKEventBusModule:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TKEventBusModule: 753db12fe622de5b1e09c44bc4fa8569e998270f
+
+PODFILE CHECKSUM: 7666fd72c5f3763a05624dd7e7753b053d4be916
+
+COCOAPODS: 1.9.3
